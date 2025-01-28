@@ -16,7 +16,7 @@ import com.sy.sypicture.application.service.PictureApplicationService;
 import com.sy.sypicture.infrastructure.mapper.PictureMapper;
 import com.sy.sypicture.application.service.UserApplicationService;
 import com.sy.sypicture.interfaces.vo.user.UserVO;
-import com.sy.sypicturebackend.manager.upload.FilePictureUpload;
+import com.sy.sypicture.infrastructure.manager.upload.FilePictureUpload;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;

@@ -17,7 +17,7 @@ import com.sy.sypicture.infrastructure.exception.ThrowUtils;
 import com.sy.sypicture.interfaces.dto.user.UserQueryRequest;
 import com.sy.sypicture.interfaces.vo.user.LoginUserVO;
 import com.sy.sypicture.interfaces.vo.user.UserVO;
-import com.sy.sypicturebackend.manager.auth.StpKit;
+import com.sy.sypicture.shared.auth.StpKit;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.util.DigestUtils;

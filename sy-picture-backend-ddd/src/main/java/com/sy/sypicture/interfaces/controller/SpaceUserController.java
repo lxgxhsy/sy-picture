@@ -8,8 +8,8 @@ import com.sy.sypicture.infrastructure.exception.BusinessException;
 import com.sy.sypicture.infrastructure.exception.ErrorCode;
 import com.sy.sypicture.infrastructure.exception.ThrowUtils;
 import com.sy.sypicture.interfaces.assember.SpaceUserAssembler;
-import com.sy.sypicturebackend.manager.auth.annotation.SaSpaceCheckPermission;
-import com.sy.sypicturebackend.manager.auth.model.SpaceUserPermissionConstant;
+import com.sy.sypicture.shared.auth.annotation.SaSpaceCheckPermission;
+import com.sy.sypicture.shared.auth.model.SpaceUserPermissionConstant;
 import com.sy.sypicture.interfaces.dto.spaceuser.SpaceUserAddRequest;
 import com.sy.sypicture.interfaces.dto.spaceuser.SpaceUserEditRequest;
 import com.sy.sypicture.interfaces.dto.spaceuser.SpaceUserQueryRequest;
@@ -19,7 +19,6 @@ import com.sy.sypicture.interfaces.vo.space.SpaceUserVO;
 import com.sy.sypicture.application.service.SpaceUserApplicationService;
 import com.sy.sypicture.application.service.UserApplicationService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.BeanUtils;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;

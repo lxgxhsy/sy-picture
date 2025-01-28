@@ -2,7 +2,7 @@ package com.sy.sypicture.interfaces.controller;
 
 import com.sy.sypicture.interfaces.assember.SpaceAssembler;
 import com.sy.sypicture.interfaces.dto.space.*;
-import com.sy.sypicturebackend.manager.auth.SpaceUserAuthManager;
+import com.sy.sypicture.shared.auth.SpaceUserAuthManager;
 import com.sy.sypicture.domain.space.valueobject.SpaceLevelEnum;
 import com.sy.sypicture.application.service.SpaceApplicationService;
 import com.sy.sypicture.application.service.UserApplicationService;
@@ -22,7 +22,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 
-import org.springframework.beans.BeanUtils;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;

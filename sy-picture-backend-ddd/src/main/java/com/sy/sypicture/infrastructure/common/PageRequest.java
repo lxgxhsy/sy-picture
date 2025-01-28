@@ -1,7 +1,7 @@
 package com.sy.sypicture.infrastructure.common;
 
 
-import com.sy.sypicturebackend.constant.CommonConstant;
+import com.sy.sypicture.domain.user.constant.CommonConstant;
 import lombok.Data;
 
 /**
