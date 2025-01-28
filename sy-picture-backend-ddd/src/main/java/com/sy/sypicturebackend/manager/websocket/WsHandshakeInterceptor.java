@@ -5,11 +5,11 @@ import cn.hutool.core.util.StrUtil;
 import com.sy.sypicturebackend.manager.auth.SpaceUserAuthManager;
 import com.sy.sypicturebackend.manager.auth.model.SpaceUserPermissionConstant;
 import com.sy.sypicture.domain.picture.entity.Picture;
-import com.sy.sypicturebackend.model.entity.Space;
+import com.sy.sypicture.domain.space.entity.Space;
 import com.sy.sypicture.domain.user.entity.User;
-import com.sy.sypicturebackend.model.enums.SpaceTypeEnum;
+import com.sy.sypicture.domain.space.valueobject.SpaceTypeEnum;
 import com.sy.sypicture.application.service.PictureApplicationService;
-import com.sy.sypicturebackend.service.SpaceService;
+import com.sy.sypicture.application.service.SpaceApplicationService;
 import com.sy.sypicture.application.service.UserApplicationService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.server.ServerHttpRequest;
@@ -34,7 +34,7 @@ public class WsHandshakeInterceptor implements HandshakeInterceptor {
 	@Resource
 	private PictureApplicationService pictureApplicationService;
 	@Resource
-	private SpaceService spaceService;
+	private SpaceApplicationService spaceApplicationService;
 	@Resource
 	private SpaceUserAuthManager spaceUserAuthManager;
 	/**
@@ -72,7 +72,7 @@ public class WsHandshakeInterceptor implements HandshakeInterceptor {
 			Long spaceId = picture.getSpaceId();
 			Space space = null;
 			if (spaceId != null) {
-				space = spaceService.getById(spaceId);
+				space = spaceApplicationService.getById(spaceId);
 				if (ObjUtil.isEmpty(space)) {
 					log.error("图片所在空间不存在，拒绝握手");
 					return false;

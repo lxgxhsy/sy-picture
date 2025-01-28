@@ -24,19 +24,18 @@ import com.sy.sypicturebackend.manager.auth.StpKit;
 import com.sy.sypicturebackend.manager.auth.annotation.SaSpaceCheckPermission;
 import com.sy.sypicturebackend.manager.auth.model.SpaceUserPermissionConstant;
 import com.sy.sypicture.domain.picture.entity.Picture;
-import com.sy.sypicturebackend.model.entity.Space;
+import com.sy.sypicture.domain.space.entity.Space;
 import com.sy.sypicture.domain.user.entity.User;
 import com.sy.sypicture.domain.picture.valueobject.PictureReviewStatusEnum;
 import com.sy.sypicture.interfaces.vo.picture.PictureTagCategory;
 import com.sy.sypicture.interfaces.vo.picture.PictureVO;
 import com.sy.sypicture.application.service.PictureApplicationService;
-import com.sy.sypicturebackend.service.SpaceService;
+import com.sy.sypicture.application.service.SpaceApplicationService;
 import com.sy.sypicture.application.service.UserApplicationService;
 import com.github.benmanes.caffeine.cache.Cache;
 import com.github.benmanes.caffeine.cache.Caffeine;
 import lombok.extern.slf4j.Slf4j;
 
-import org.springframework.beans.BeanUtils;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.util.DigestUtils;
@@ -71,7 +70,7 @@ public class PictureController {
 	private SpaceUserAuthManager spaceUserAuthManager;
 
 	@Resource
-	private SpaceService spaceService;
+	private SpaceApplicationService spaceApplicationService;
 
 	@Resource
 	private AliYunAiApi aliYunAiApi;
@@ -202,7 +201,7 @@ public class PictureController {
 		if (spaceId != null) {
 			boolean hasPermission = StpKit.SPACE.hasPermission(SpaceUserPermissionConstant.PICTURE_VIEW);
 			ThrowUtils.throwIf(!hasPermission, ErrorCode.NO_AUTH_ERROR);
-			space = spaceService.getById(spaceId);
+			space = spaceApplicationService.getById(spaceId);
 			ThrowUtils.throwIf(space == null, ErrorCode.NOT_FOUND_ERROR, "空间不存在");
 		}
 		// 获取权限列表

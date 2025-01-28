@@ -5,12 +5,12 @@ import cn.hutool.core.util.StrUtil;
 import cn.hutool.json.JSONUtil;
 import com.sy.sypicturebackend.manager.auth.model.SpaceUserAuthConfig;
 import com.sy.sypicturebackend.manager.auth.model.SpaceUserRole;
-import com.sy.sypicturebackend.model.entity.Space;
-import com.sy.sypicturebackend.model.entity.SpaceUser;
+import com.sy.sypicture.domain.space.entity.Space;
+import com.sy.sypicture.domain.space.entity.SpaceUser;
 import com.sy.sypicture.domain.user.entity.User;
-import com.sy.sypicturebackend.model.enums.SpaceRoleEnum;
-import com.sy.sypicturebackend.model.enums.SpaceTypeEnum;
-import com.sy.sypicturebackend.service.SpaceUserService;
+import com.sy.sypicture.domain.space.valueobject.SpaceRoleEnum;
+import com.sy.sypicture.domain.space.valueobject.SpaceTypeEnum;
+import com.sy.sypicture.application.service.SpaceUserApplicationService;
 import com.sy.sypicture.application.service.UserApplicationService;
 import org.springframework.stereotype.Component;
 
@@ -29,7 +29,7 @@ import java.util.List;
 public class SpaceUserAuthManager {
 
 	@Resource
-	private SpaceUserService spaceUserService;
+	private SpaceUserApplicationService spaceUserApplicationService;
 
 	@Resource
 	private UserApplicationService userApplicationService;
@@ -95,7 +95,7 @@ public class SpaceUserAuthManager {
 				}
 			case TEAM:
 				// 团队空间，查询 SpaceUser 并获取角色和权限
-				SpaceUser spaceUser = spaceUserService.lambdaQuery()
+				SpaceUser spaceUser = spaceUserApplicationService.lambdaQuery()
 						.eq(SpaceUser::getSpaceId, space.getId())
 						.eq(SpaceUser::getUserId, loginUser.getId())
 						.one();

@@ -1,6 +1,6 @@
 package com.sy.sypicture.infrastructure.mapper;
 
-import com.sy.sypicturebackend.model.entity.SpaceUser;
+import com.sy.sypicture.domain.space.entity.SpaceUser;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**

@@ -1,10 +1,10 @@
 package com.sy.sypicturebackend.manager.sharding;
 
 import com.baomidou.mybatisplus.extension.toolkit.SqlRunner;
-import com.sy.sypicturebackend.service.SpaceService;
-import com.sy.sypicturebackend.model.entity.Space;
-import com.sy.sypicturebackend.model.enums.SpaceLevelEnum;
-import com.sy.sypicturebackend.model.enums.SpaceTypeEnum;
+import com.sy.sypicture.application.service.SpaceApplicationService;
+import com.sy.sypicture.domain.space.entity.Space;
+import com.sy.sypicture.domain.space.valueobject.SpaceLevelEnum;
+import com.sy.sypicture.domain.space.valueobject.SpaceTypeEnum;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shardingsphere.driver.jdbc.core.connection.ShardingSphereConnection;
 import org.apache.shardingsphere.infra.metadata.database.rule.ShardingSphereRuleMetaData;
@@ -34,7 +34,7 @@ public class DynamicShardingManager {
 	private DataSource dataSource;
 
 	@Resource
-	private SpaceService spaceService;
+	private SpaceApplicationService spaceApplicationService;
 
 	private static final String LOGIC_TABLE_NAME = "picture";
 
@@ -51,7 +51,7 @@ public class DynamicShardingManager {
 	 */
 	private Set<String> fetchAllPictureTableNames() {
 		// 为了测试方便，直接对所有团队空间分表（实际上线改为仅对旗舰版生效）
-		Set<Long> spaceIds = spaceService.lambdaQuery()
+		Set<Long> spaceIds = spaceApplicationService.lambdaQuery()
 				.eq(Space::getSpaceType, SpaceTypeEnum.TEAM.getValue())
 				.list()
 				.stream()

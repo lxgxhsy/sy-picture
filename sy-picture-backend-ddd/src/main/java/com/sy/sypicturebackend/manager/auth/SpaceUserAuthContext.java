@@ -1,8 +1,8 @@
 package com.sy.sypicturebackend.manager.auth;
 
 import com.sy.sypicture.domain.picture.entity.Picture;
-import com.sy.sypicturebackend.model.entity.Space;
-import com.sy.sypicturebackend.model.entity.SpaceUser;
+import com.sy.sypicture.domain.space.entity.Space;
+import com.sy.sypicture.domain.space.entity.SpaceUser;
 import lombok.Data;
 
 /**
