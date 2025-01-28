@@ -15,7 +15,7 @@ import com.sy.sypicture.infrastructure.exception.ThrowUtils;
 import com.sy.sypicturebackend.model.dto.space.*;
 import com.sy.sypicturebackend.model.entity.Space;
 import com.sy.sypicture.domain.user.entity.User;
-import com.sy.sypicturebackend.model.vo.SpaceVO;
+import com.sy.sypicture.interfaces.vo.picture.vo.SpaceVO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

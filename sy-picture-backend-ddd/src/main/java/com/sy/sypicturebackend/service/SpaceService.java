@@ -8,7 +8,7 @@ import com.sy.sypicturebackend.model.dto.space.SpaceQueryRequest;
 import com.sy.sypicturebackend.model.entity.Space;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.sy.sypicture.domain.user.entity.User;
-import com.sy.sypicturebackend.model.vo.SpaceVO;
+import com.sy.sypicture.interfaces.vo.picture.vo.SpaceVO;
 
 import javax.servlet.http.HttpServletRequest;
 

@@ -14,7 +14,7 @@ import com.sy.sypicturebackend.model.dto.spaceuser.SpaceUserEditRequest;
 import com.sy.sypicturebackend.model.dto.spaceuser.SpaceUserQueryRequest;
 import com.sy.sypicturebackend.model.entity.SpaceUser;
 import com.sy.sypicture.domain.user.entity.User;
-import com.sy.sypicturebackend.model.vo.SpaceUserVO;
+import com.sy.sypicture.interfaces.vo.picture.vo.SpaceUserVO;
 import com.sy.sypicturebackend.service.SpaceUserService;
 import com.sy.sypicture.application.service.UserApplicationService;
 import lombok.extern.slf4j.Slf4j;

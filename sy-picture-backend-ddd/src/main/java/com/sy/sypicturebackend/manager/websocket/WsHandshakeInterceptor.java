@@ -4,11 +4,11 @@ import cn.hutool.core.util.ObjUtil;
 import cn.hutool.core.util.StrUtil;
 import com.sy.sypicturebackend.manager.auth.SpaceUserAuthManager;
 import com.sy.sypicturebackend.manager.auth.model.SpaceUserPermissionConstant;
-import com.sy.sypicturebackend.model.entity.Picture;
+import com.sy.sypicture.domain.picture.entity.Picture;
 import com.sy.sypicturebackend.model.entity.Space;
 import com.sy.sypicture.domain.user.entity.User;
 import com.sy.sypicturebackend.model.enums.SpaceTypeEnum;
-import com.sy.sypicturebackend.service.PictureService;
+import com.sy.sypicture.application.service.PictureApplicationService;
 import com.sy.sypicturebackend.service.SpaceService;
 import com.sy.sypicture.application.service.UserApplicationService;
 import lombok.extern.slf4j.Slf4j;
@@ -32,7 +32,7 @@ public class WsHandshakeInterceptor implements HandshakeInterceptor {
 	@Resource
 	private UserApplicationService userApplicationService;
 	@Resource
-	private PictureService pictureService;
+	private PictureApplicationService pictureApplicationService;
 	@Resource
 	private SpaceService spaceService;
 	@Resource
@@ -64,7 +64,7 @@ public class WsHandshakeInterceptor implements HandshakeInterceptor {
 				return false;
 			}
 			// 校验用户是否有编辑当前图片的权限
-			Picture picture = pictureService.getById(pictureId);
+			Picture picture = pictureApplicationService.getById(pictureId);
 			if (ObjUtil.isEmpty(picture)) {
 				log.error("图片不存在，拒绝握手");
 				return false;

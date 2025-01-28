@@ -13,13 +13,13 @@ import com.sy.sypicture.domain.user.constant.UserConstant;
 import com.sy.sypicture.infrastructure.exception.BusinessException;
 import com.sy.sypicture.infrastructure.exception.ErrorCode;
 import com.sy.sypicturebackend.manager.auth.model.SpaceUserPermissionConstant;
-import com.sy.sypicturebackend.model.entity.Picture;
+import com.sy.sypicture.domain.picture.entity.Picture;
 import com.sy.sypicturebackend.model.entity.Space;
 import com.sy.sypicturebackend.model.entity.SpaceUser;
 import com.sy.sypicture.domain.user.entity.User;
 import com.sy.sypicturebackend.model.enums.SpaceRoleEnum;
 import com.sy.sypicturebackend.model.enums.SpaceTypeEnum;
-import com.sy.sypicturebackend.service.PictureService;
+import com.sy.sypicture.application.service.PictureApplicationService;
 import com.sy.sypicturebackend.service.SpaceService;
 import com.sy.sypicturebackend.service.SpaceUserService;
 import com.sy.sypicture.application.service.UserApplicationService;
@@ -52,7 +52,7 @@ public class StpInterfaceImpl implements StpInterface {
     private SpaceUserService spaceUserService;
 
     @Resource
-    private PictureService pictureService;
+    private PictureApplicationService pictureApplicationService;
 
     @Resource
     private SpaceUserAuthManager spaceUserAuthManager;
@@ -112,7 +112,7 @@ public class StpInterfaceImpl implements StpInterface {
             if (pictureId == null) {
                 return ADMIN_PERMISSIONS;
             }
-            Picture picture = pictureService.lambdaQuery()
+            Picture picture = pictureApplicationService.lambdaQuery()
                     .eq(Picture::getId, pictureId)
                     .select(Picture::getId, Picture::getSpaceId, Picture::getUserId)
                     .one();

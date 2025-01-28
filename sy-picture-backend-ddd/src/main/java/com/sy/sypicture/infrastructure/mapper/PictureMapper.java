@@ -1,6 +1,6 @@
 package com.sy.sypicture.infrastructure.mapper;
 
-import com.sy.sypicturebackend.model.entity.Picture;
+import com.sy.sypicture.domain.picture.entity.Picture;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**

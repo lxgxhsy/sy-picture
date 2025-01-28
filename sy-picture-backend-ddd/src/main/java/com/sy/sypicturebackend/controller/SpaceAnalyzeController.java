@@ -9,7 +9,7 @@ import com.sy.sypicture.domain.user.entity.User;
 import com.sy.sypicturebackend.service.SpaceAnalyzeService;
 import com.sy.sypicture.application.service.UserApplicationService;
 import com.sy.sypicturebackend.model.dto.space.analyze.*;
-import com.sy.sypicturebackend.model.vo.analyze.*;
+import com.sy.sypicture.interfaces.vo.picture.vo.analyze.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

@@ -17,7 +17,7 @@ import com.sy.sypicture.domain.user.entity.User;
 import com.sy.sypicturebackend.model.enums.SpaceLevelEnum;
 import com.sy.sypicturebackend.model.enums.SpaceRoleEnum;
 import com.sy.sypicturebackend.model.enums.SpaceTypeEnum;
-import com.sy.sypicturebackend.model.vo.SpaceVO;
+import com.sy.sypicture.interfaces.vo.picture.vo.SpaceVO;
 import com.sy.sypicture.interfaces.vo.user.UserVO;
 import com.sy.sypicturebackend.service.SpaceService;
 import com.sy.sypicture.infrastructure.mapper.SpaceMapper;

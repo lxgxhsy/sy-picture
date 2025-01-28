@@ -5,7 +5,7 @@ import com.sy.sypicturebackend.model.dto.spaceuser.SpaceUserAddRequest;
 import com.sy.sypicturebackend.model.dto.spaceuser.SpaceUserQueryRequest;
 import com.sy.sypicturebackend.model.entity.SpaceUser;
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.sy.sypicturebackend.model.vo.SpaceUserVO;
+import com.sy.sypicture.interfaces.vo.picture.vo.SpaceUserVO;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;

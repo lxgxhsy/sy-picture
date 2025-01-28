@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.sy.sypicturebackend.model.entity.Space;
 import com.sy.sypicture.domain.user.entity.User;
 import com.sy.sypicturebackend.model.dto.space.analyze.*;
-import com.sy.sypicturebackend.model.vo.analyze.*;
+import com.sy.sypicture.interfaces.vo.picture.vo.analyze.*;
 
 import java.util.List;
 
