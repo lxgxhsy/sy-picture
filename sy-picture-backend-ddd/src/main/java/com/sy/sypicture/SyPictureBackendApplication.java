@@ -11,6 +11,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
 
 /**
  * @author 诺诺
+ * 结束DDD重构
  */
 @SpringBootApplication(exclude = {ShardingSphereAutoConfiguration.class})
 @EnableAsync
